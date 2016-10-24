@@ -169,15 +169,21 @@
 				arrBanner : [
 					{
 						name : "图片1",
-						src : require("../assets/bg1.jpg")
+						src : require("../assets/bg3.png"),
+						left_bg : require("../assets/ih3.png"),
+						right_bg : require("../assets/b3_d3.png")
 					},
 					{
 						name : "图片2",
-						src : require("../assets/bg2.jpg")
+						src : require("../assets/bg1.jpg"),
+						left_bg : require("../assets/ih1.png"),
+						right_bg : require("../assets/bh2.png")
 					},
 					{
 						name : "图片3",
-						src : require("../assets/bg3.png")
+						src : require("../assets/bg2.jpg"),
+						left_bg : require("../assets/ih2.png"),
+						right_bg : require("../assets/bh3.png")
 					}
 				]
 			}

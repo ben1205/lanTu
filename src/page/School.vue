@@ -11,15 +11,6 @@
 	position relative
 	top 0 
 	transition top 5s
-	.go-top
-		position fixed
-		bottom 50px
-		right 40px
-		width 70px
-		height 60px
-		line-height 60px
-		background-color pink
-		display none
 	.floor1
 		position relative
 		height 860px
@@ -182,7 +173,6 @@
 
 <template>
 	<div class="body">
-		<div class="go-top">返回顶部</div>
 		<div class="floor1">
 		<div class="word">
 				<p>梳理、提升、准备，我们为您提供一站式全生命周期的呵护</p>
@@ -312,6 +302,4 @@
 			}
 		}
 	}
-	var  _this = document.body.scrollTop,
-		_go = document.querySelector(".go-top");
 </script>
