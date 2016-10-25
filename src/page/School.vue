@@ -136,7 +136,33 @@
 					top -2px
 					left -5px
 					animation roll linear 10s infinite	
-				
+				.tb-img
+					.left-img
+						float left
+						width 324px
+						height @width
+						background url(../assets/m5.png) no-repeat
+						padding-right 100px
+					ul
+						float left
+						li
+							margin 15px 0
+							font-size 20px
+							color #0080BA
+							transition all 0.2s
+							cursor pointer
+							width 150px
+							&.big
+								font-size 24px
+							span
+								display inline-block
+								margin-right 25px
+								width 10px
+								height 10px
+								background-color #86D230
+								border-radius 50%
+								vertical-align middle
+								margin-top -6px
 	.floor-down
 		height 602px
 		width 100%
@@ -206,7 +232,12 @@
 		<div class="floor-box">
 			<div class="w1100">
 				<div class="fb-img">
-					<div class="tb-img"></div>
+					<div class="tb-img">
+						<div class="left-img"></div>
+						<ul>
+							<li v-for="(item,index) of listArr" @click="handleClick(index)" v-bind:class="{big: index === currentIndex}"><span></span>{{item.title}}</li>
+						</ul>
+					</div>
 				</div>
 				<div class="fb-title-rg">
 					<h2>九大应用群</h2>
@@ -274,6 +305,12 @@
 </template>
 
 <script>
+	let t;
+	const timer = callback =>{
+		t = setInterval(() => {
+			callback();
+		}, 3000)
+	}
 	export default{
 		methods : {
 			gofor : function(){
@@ -299,7 +336,60 @@
 					}
 				},10);
 
+			},
+			handleClick(index){
+				clearTimeout(t);
+				this.currentIndex = index;
+				timer(() =>{
+					let currentIndex = this.currentIndex;
+					this.currentIndex = currentIndex > this.len - 1 ? 0 : currentIndex + 1;
+				});
 			}
+		},
+		data(){
+			return{
+				listArr : [
+					{
+						title : "基础服务"
+					},
+					{
+						title : "迎新系统"
+					},
+					{
+						title : "毕业就业"
+					},
+					{
+						title : "教学教务"
+					},
+					{
+						title : "科研教务"
+					},
+					{
+						title : "智慧物联"
+					},
+					{
+						title : "生活服务"
+					},
+					{
+						title : "家长校友"
+					},
+					{
+						title : "校园社区"
+					},
+				],
+				currentIndex : 0
+			}
+		},
+		computed : {
+			len(){
+				return this.listArr.length;
+			}
+		},
+		mounted(){
+			timer(() =>{
+					let currentIndex = this.currentIndex;
+					this.currentIndex = currentIndex > this.len - 2 ? 0 : currentIndex + 1;
+				});
 		}
 	}
 </script>
