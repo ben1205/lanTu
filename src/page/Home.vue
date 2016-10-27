@@ -31,6 +31,11 @@
 			padding 80px 0
 			position relative
 			overflow hidden
+			.seeBox
+				height 480px
+				width 1450px
+				margin 0 auto
+				overflow hidden
 			.mob-left
 				width 48px
 				height 48px
@@ -119,6 +124,7 @@
 			<div class="mob-banner">
 				<a class="mob-left"></a>
 				<a class="mob-right"></a>
+				<div class="seeBox">
 				<ul class="mobile">
 					<li><img src="../assets/i1.png"></li>
 					<li><img src="../assets/i5.png"></li>
@@ -136,6 +142,7 @@
 					<li><img src="../assets/i4.png"></li>
 					<li><img src="../assets/i3.png"></li>
 				</ul>
+				</div>
 				<ul class="circle">
 					<li></li>
 					<li></li>

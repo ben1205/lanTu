@@ -1,6 +1,6 @@
 <style scoped lang="stylus">
 .green
-	color green
+	color rgb(177, 201, 61)
 .header
 	position fixed
 	z-index 20
@@ -31,7 +31,7 @@
 		<div class="w1100">
 			<img src="../assets/logo.png">
 			<div class="Nav">
-				<div v-for="item of navArr"><router-link :to="item.src" >{{item.name}}</router-link></div>
+				<div v-for="(item,index) of navArr" @click="clk(index)" v-bind:class="{green:index === a}"><router-link :to="item.src" >{{item.name}}</router-link></div>
 			</div>
 		</div>
 	</div>
@@ -66,7 +66,13 @@
 						name : "联系我们",
 						src : "/call"
 					}
-				]
+				],
+				a : 0
+			}
+		},
+		methods : {
+			clk : function(index){
+				this.a = index;
 			}
 		}
 	}

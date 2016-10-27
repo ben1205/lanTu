@@ -233,7 +233,9 @@
 			<div class="w1100">
 				<div class="fb-img">
 					<div class="tb-img">
-						<div class="left-img"></div>
+						<div class="left-img" :style = "{'background-position-y': -324*currentIndex + 'px'}">
+							
+						</div>
 						<ul>
 							<li v-for="(item,index) of listArr" @click="handleClick(index)" v-bind:class="{big: index === currentIndex}"><span></span>{{item.title}}</li>
 						</ul>
